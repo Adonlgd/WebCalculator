@@ -108,7 +108,7 @@ function init(){
                                  else{
                                      getText.value=0;
                                      numFirst=0;
-                                     alert("除数不能为0或空哦~")
+                                     alert("Divider cannot be 0 or empty")
                                  }
                                  break;
                          }
@@ -121,12 +121,12 @@ function init(){
 
 /////functions
 
- //实现正负号功能
+ //Implement sign function
  function mySign(n){
      return Number(n)*(-1);
  }
 
- //实现退位键功能
+ //Realize the function of the exit key
  function myBack(n){
      n=n.substr(0,n.length-1);
      if (isNull(n))
@@ -134,20 +134,20 @@ function init(){
      return n;
  }
 
- //实现小数点功能
+ //Implement decimal point function
  function point_fun(n){
-     //indexOf()表示这个符号是否存在，存在就返回位置，不存在就返回-1
+     //indexOf() indicates whether this symbol exists, returns the position if it exists, and returns -1 if it does not exist
      if (n.indexOf(".")==-1)
          n=n+".";
      return n;
  }
 
- //判断文本框是空或者为0的操作
+ //Operation to determine whether the text box is empty or 0
  function isNull(num){
      return (num=="0"||num.length==0)?true:false;
  }
 
- //给摸鱼按钮添加超链接
+ //Add a hyperlink to the fun button
  function Link(){
      document.getElementById("bilibili").onclick=function (){
          window.location.href="http://www.bilibili.com";
