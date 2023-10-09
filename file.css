@@ -1,0 +1,58 @@
+.div1{
+    width: 400px;
+    height: 550px;
+    top: 150px;
+    left: 600px;
+    position: absolute;
+    border-radius: 10px;
+    background-image: url(2.jpeg);
+}
+.div2{
+    width: 350px;
+    height: 80px;
+    position: relative;
+    left: 20px;
+    top: 42px;
+}
+.text1{
+    width: 350px;
+    height: 60px;
+    font-size: large;
+    text-align: right;/*将文本框内的文字右对齐*/
+    background-color: white;/*默认的不可选中版的文本框是灰色的，这是要将其设置为白色*/
+}
+.div3{
+    width: 340px;
+    height: 350px;
+    position: relative;
+    left: 30px;
+    top: 70px;
+    border-radius: 10px;
+    background-color: darkblue;
+}
+.div4{
+    width: 400px;
+    height: 100px;
+    top: 50px;
+    left: 600px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: cyan;
+}
+
+/*属性选择器：将所有该类型的标签都选中一起设置*/
+input[type="button"]{
+    height: 40px;
+    width: 60px;
+    margin: 8px;
+    margin-left: 13px;
+    border-radius: 10px;
+    background: goldenrod;
+}
+
+/*使用伪类选择器改变悬浮时的颜色变化*/
+input[type="button"]:hover{
+    /*让颜色变化的是background-color，而不是单纯的color*/
+    background-color: cornflowerblue;
+    border: 2px solid;
+}
