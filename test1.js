@@ -1,33 +1,37 @@
-/*将初始化的内容放在js中，将样式的内容
-放在css中，html中只写class、value等基本html内容*/
+/*Place the initialized content in JS and store the style content
+Put it in CSS, and only write basic HTML content such as class and value in HTML*/
+
 function init(){
     initLabel();
     fun();
     Link();
  }
- /*将文本框内容进行初始化*/
+
+ /*Initialize the content of the text box*/
  function initLabel(){
      let value=document.getElementById("Text1");
      value.value=0;
      value.disabled="disabled";
  }
- //按钮添加功能
+
+ //Button Add Function
  function fun(){
      let getText=document.getElementById("Text1");
      let nums=document.getElementsByTagName("input");
      let numFirst,symbol;
      for (let i=0;i<nums.length;i++){
-         nums[i].onclick=function (){
-             //isNaN如果是数字返回false，不是数字返回true
+         nums[i].onclick=function (){  //isNaNIf this function judge if it is a number, it returns false, and if it is not a number, it returns true
              if (!isNaN(this.value)){
                  if (isNull(getText.value))
                      getText.value=this.value;
                  else
                      getText.value=getText.value+this.value;
              }
-             else{/*非数字执行的操作*/
+
+             else{/*Non numeric operations*/
                  let button_info=this.value;
                  switch (button_info){
+                    //Non operator operations
                      case "C":
                          getText.value=0;
                          break;
@@ -35,18 +39,15 @@ function init(){
                          getText.value=myBack(getText.value);
                          break;
                      case "+/-":
-                         //单击一次就变为符号，再单机一次就变为正号
+                         //Once clicked, it becomes a symbol, and once more clicked, it becomes a positive sign
                          getText.value=mySign(getText.value);
                          break;
-                     case "/":
-                         numFirst=getText.value*1;
-                         getText.value=0;
-                         symbol="/"
-                         break;
                      case ".":
-                         //小数点只能点击一次
+                         //The decimal point can only be clicked once
                          getText.value=point_fun(getText.value);
                          break;
+
+                    //Complex operations     
                     case "x²":
                          numFirst=getText.value*1;
                          getText.value=numFirst*numFirst;
@@ -56,13 +57,20 @@ function init(){
                          getText.value=numFirst*numFirst*numFirst;
                          break;
                     case "√":
-                            numFirst=getText.value*1;
-                            getText.value=Math.sqrt(numFirst);
-                            break;   
+                        numFirst=getText.value*1;
+                        getText.value=Math.sqrt(numFirst);
+                        break;   
                     case "∛":
-                            numFirst=getText.value*1;
-                            getText.value=Math.cbrt(numFirst);
-                            break  
+                        numFirst=getText.value*1;
+                        getText.value=Math.cbrt(numFirst);
+                        break;
+
+                    //Simple operations
+                    case "/":
+                         numFirst=getText.value*1;
+                         getText.value=0;
+                         symbol="/"
+                         break;
                      case "*":
                          numFirst=getText.value*1;
                          getText.value=0;
@@ -74,18 +82,17 @@ function init(){
                          symbol="-"
                          break;
                      case "+":
-                         /*清除文本框默认前面的0,并获取里面的值供计算使用*/
                          numFirst=getText.value*1;
                          getText.value=0;
                          symbol="+"
                          break;
                      case "=":
                          switch (symbol){
-                             //下面不能用parseInt()将字符串转化为数字，因为如果有小数就会将小数自动转化为整数
-                                 //将字符串转化为数字方法：
-                                 //1、值*1实现
-                                 //2、parseInt（）实现
-                                 //3、Number（）实现
+                             //ParseInt() cannot be used to convert a string to a number below, as if there are decimals, they will be automatically converted to integers
+                             //Method for converting strings to numbers:
+                             //1. Value * 1 implementation
+                             //2. ParseInt() implementation
+                            //3. Number() implementation
                              case "+":
                                  getText.value=numFirst+Number(getText.value);
                                  break;
