@@ -6,10 +6,10 @@
     $re_exp = str_replace(" ", "+", $expression);
     $final_exp=$re_exp."=".$res;
     echo "$final_exp";
-    $con = mysqli_connect('localhost','root','lgd000','webcal');
+    $con = mysqli_connect('localhost','root','lgd000','history_list');
 
     if($con){
-        //设置编码格式
+        //set code format
         mysqli_query($con,'set names utf8');
 
         $sql = "insert into history_table(expression,result) values('$final_exp','$res')";

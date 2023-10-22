@@ -216,12 +216,12 @@ function calculateExpression(expression) {
 document.getElementById('save').onclick = function () {
 
 
-    var result = document.getElementById("result1");//获取输入栏标签
-    var result1 = document.getElementById("result2");//获取输出栏标签
+    var result = document.getElementById("result1");
+    var result1 = document.getElementById("result2");
 
 
     finalResult = calculateExpression(result.innerHTML);
-    //将结果显示
+
 
     result1.innerHTML = finalResult;
 
@@ -248,33 +248,33 @@ document.getElementById('save').onclick = function () {
 }
 
 
-//计算结果函数
+
 function res() {
-    var result = document.getElementById("result1");//获取输入栏标签
-    var result1 = document.getElementById("result2");//获取输出栏标签
+    var result = document.getElementById("result1");
+    var result1 = document.getElementById("result2");
     console.log(typeof result.innerHTML)
 
     finalResult = calculateExpression(result.innerHTML);
-    //将结果显示
+
 
     result1.innerHTML = finalResult;
     result.innerHTML = "";
 }
 
-//删除一位处理函数
+
 function del() {
-    var result = document.getElementById("result1");//获取标签
-    var len = result.innerHTML.length;//获取输入栏输入的长度
-    result.innerHTML = result.innerHTML.substr(0, len - 1);//使用substr截取掉一位再保存
+    var result = document.getElementById("result1");
+    var len = result.innerHTML.length;
+    result.innerHTML = result.innerHTML.substr(0, len - 1);
 
 }
 
-// 清除全部内容
+
 function clear1() {
-    var result = document.getElementById("result1");//获取标签
-    result.innerHTML = "";//输入显示栏设置为空值
-    var result1 = document.getElementById("result2");//获取标签
-    result1.innerHTML = "";//输出显示栏设置为空值
+    var result = document.getElementById("result1");
+    result.innerHTML = "";
+    var result1 = document.getElementById("result2");
+    result1.innerHTML = "";
     for (var i = 0; i < 10; i++) {
                 var hist = "hist" + (i + 1);
                 var hist_clear = document.getElementById(hist);
